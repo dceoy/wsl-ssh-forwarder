@@ -10,10 +10,11 @@ SSH Forwarder for WSL2
     $ sudo ssh-keygen -A
     ```
 
-2.  Edit /etc/ssh/sshd_config in WSL.
+2.  Copy `forward_ssh_port.sh` in `/usr/local/bin/` in WSL.
 
-3.  Set `forward_ssh_port.sh` on Task Scheduler in Windows.
-
-    ```bat
-    wsl --user root --exec /path/to/forward_ssh_port.sh
+    ```sh
+    $ git clone https://github.com/dceoy/wsl-ssh-forwarder.git
+    $ sudo cp wsl-ssh-forwarder/forward_ssh_port.sh /usr/local/bin/
     ```
+
+3.  Set `scheduled_task.bat` on Task Scheduler in Windows.
